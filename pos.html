@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scalify POS - Logiciel de Caisse pour Supérettes</title>
+    <meta name="description"
+        content="Scalify POS est le logiciel de caisse le plus complet pour les supérettes et commerces algériens. Interface tactile, gestion de stock, facturation.">
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pos.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <img src="assets/logo.png" alt="Scalify">
+            </a>
+            <ul class="navbar-menu" id="navbar-menu">
+                <li class="navbar-dropdown">
+                    <a href="javascript:void(0)" class="navbar-dropdown-trigger" data-i18n="nav.solutions">Solutions
+                        <span class="dropdown-arrow">✓</span></a>
+                    <div class="navbar-dropdown-menu">
+                        <a href="pos.html">Supérettes & Magasins</a>
+                        <a href="medical.html">Cabinets médicaux</a>
+                        <a href="enterprise.html">Entreprises</a>
+                        <a href="gym.html">Salles de Sport</a>
+                        <a href="personnalisation.html">Personnalisation</a>
+                    </div>
+                </li>
+                <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+            <a href="help.html#contact-form" class="navbar-cta">Feedback</a>
+            <button class="navbar-toggle" id="navbar-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- POS Hero -->
+    <section class="pos-hero">
+        <div class="pos-hero-content">
+            <span class="pos-badge">Scalify POS</span>
+            <h1>Le logiciel de caisse<br>complet pour votre commerce</h1>
+            <p class="pos-hero-subtitle">
+                Interface tactile intuitive, gestion de stock automatique, facturation conforme,
+                tableaux de bord en temps réel. Tout ce dont vous avez besoin, en un seul logiciel.
+            </p>
+            <div class="pos-hero-ctas">
+                <a href="demo/index.html" class="btn btn-primary btn-large">
+                    Essayer la démo
+                </a>
+                <a href="#features" class="btn btn-secondary btn-large">
+                    Voir les fonctionnalités
+                </a>
+            </div>
+        </div>
+        <div class="pos-hero-image">
+            <img src="assets/pos-screenshots/multi-devices.png" alt="Scalify POS sur tous les appareils"
+                class="hero-mockup">
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="pos-features" id="features">
+        <div class="section-header">
+            <h2>Tout ce dont vous avez besoin</h2>
+            <p>Un logiciel complet pour gérer votre commerce de A à Z</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🛒</div>
+                <h3>Point de Vente</h3>
+                <p>Interface tactile optimisée, scan code-barres, paiements multiples, tickets personnalisés.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📦</div>
+                <h3>Gestion de Stock</h3>
+                <p>Suivi en temps réel, alertes stock faible, inventaire automatique, historique mouvements.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🧾</div>
+                <h3>Facturation A4</h3>
+                <p>Devis, bons de livraison, factures conformes à la réglementation algérienne.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Tableaux de Bord</h3>
+                <p>Statistiques ventes, CA journalier, produits les plus vendus, profits en temps réel.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Gestion Clients</h3>
+                <p>Base de données clients, historique achats, programme de fidélité avec points.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👼</div>
+                <h3>Ressources Humaines</h3>
+                <p>Gestion employés, pointage, avances sur salaire, fiches de paie automatiques.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📡</div>
+                <h3>Fonctionne Hors Ligne</h3>
+                <p>Pas besoin d'internet. Toutes les données sont stockées localement en sécurité.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Sécurisé</h3>
+                <p>Protection par mot de passe, clé de licence unique, données protégées.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Point de Vente Feature -->
+    <section class="pos-showcase">
+        <div class="showcase-container">
+            <div class="showcase-content">
+                <span class="showcase-badge">💳 Point de Vente</span>
+                <h2>Interface tactile ultra-rapide</h2>
+                <p class="showcase-desc">
+                    Une caisse enregistreuse moderne conçue pour la vitesse. Scannez les produits,
+                    gérez les paiements multiples, et encaissez vos clients en quelques secondes.
+                </p>
+                <ul class="showcase-features">
+                    <li>✓ Scan code-barres instantané</li>
+                    <li>✓ Paiements espèces et carte</li>
+                    <li>✓ Tickets de caisse personnalisés</li>
+                    <li>✓ Gestion des remises et promotions</li>
+                </ul>
+            </div>
+            <div class="showcase-image">
+                <img src="assets/pos-screenshots/caisse-mockup.png" alt="Interface Caisse Scalify POS">
+            </div>
+        </div>
+    </section>
+
+    <!-- Gestion de Stock Feature -->
+    <section class="pos-showcase reverse">
+        <div class="showcase-container">
+            <div class="showcase-content">
+                <span class="showcase-badge">📦 Gestion de Stock</span>
+                <h2>Inventaire intelligent en temps réel</h2>
+                <p class="showcase-desc">
+                    Suivez chaque produit de l'entrée en stock jusqu'à la vente. Recevez des alertes
+                    automatiques quand le stock est faible et optimisez vos commandes fournisseurs.
+                </p>
+                <ul class="showcase-features">
+                    <li>✓ Suivi en temps réel</li>
+                    <li>✓ Alertes stock faible</li>
+                    <li>✓ Gestion multi-variantes</li>
+                    <li>✓ Historique des mouvements</li>
+                </ul>
+            </div>
+            <div class="showcase-image">
+                <img src="assets/images/inventory-management.png" alt="Gestion de Stock">
+            </div>
+        </div>
+    </section>
+
+    <!-- Produits Feature -->
+    <section class="pos-showcase">
+        <div class="showcase-container">
+            <div class="showcase-content">
+                <span class="showcase-badge">🏷️ Catalogue Produits</span>
+                <h2>Gérez tous vos produits facilement</h2>
+                <p class="showcase-desc">
+                    Ajoutez, modifiez et organisez vos produits en quelques clics.
+                    Catégories, variantes, prix d'achat et de vente - tout est centralisé.
+                </p>
+                <ul class="showcase-features">
+                    <li>✓ Import/Export Excel</li>
+                    <li>✓ Catégories personnalisées</li>
+                    <li>✓ Photos produits</li>
+                    <li>✓ Prix multiples (détail/gros)</li>
+                </ul>
+            </div>
+            <div class="showcase-image">
+                <img src="assets/pos-screenshots/products-mockup.png" alt="Gestion des Produits">
+            </div>
+        </div>
+    </section>
+
+    <!-- Achats & Fournisseurs Feature -->
+    <section class="pos-showcase reverse">
+        <div class="showcase-container">
+            <div class="showcase-content">
+                <span class="showcase-badge">👨‍💼 Achats & Fournisseurs</span>
+                <h2>Gérez vos approvisionnements</h2>
+                <p class="showcase-desc">
+                    Enregistrez vos commandes fournisseurs, suivez les réceptions et gérez
+                    les paiements. Gardez un historique complet de tous vos achats.
+                </p>
+                <ul class="showcase-features">
+                    <li>✓ Base fournisseurs</li>
+                    <li>✓ Suivi des commandes</li>
+                    <li>✓ Réceptions partielles</li>
+                    <li>✓ Historique des paiements</li>
+                </ul>
+            </div>
+            <div class="showcase-image">
+                <img src="assets/pos-screenshots/achats-mockup.png" alt="Achats et Fournisseurs">
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Dashboard Feature -->
+    <section class="pos-showcase">
+        <div class="showcase-container">
+            <div class="showcase-content">
+                <span class="showcase-badge">📊 Tableaux de Bord</span>
+                <h2>Analytics puissants en temps réel</h2>
+                <p class="showcase-desc">
+                    Visualisez les performances de votre commerce avec des graphiques intuitifs.
+                    CA journalier, produits populaires, tendances - tout en un coup d'œil.
+                </p>
+                <ul class="showcase-features">
+                    <li>✓ Statistiques de ventes</li>
+                    <li>✓ Graphiques interactifs</li>
+                    <li>✓ Rapports Z automatiques</li>
+                    <li>✓ Export PDF & Excel</li>
+                </ul>
+            </div>
+            <div class="showcase-image">
+                <img src="assets/images/analytics-charts.png" alt="Analytics Dashboard">
+            </div>
+        </div>
+    </section>
+
+    <!-- Loyalty Program Feature -->
+    <section class="pos-showcase reverse">
+        <div class="showcase-container">
+            <div class="showcase-content">
+                <span class="showcase-badge">🎁 Programme Fidélité</span>
+                <h2>Fidélisez vos clients</h2>
+                <p class="showcase-desc">
+                    Créez un programme de fidélité personnalisé. Vos clients accumulent des points
+                    à chaque achat et les échangent contre des réductions ou des cadeaux.
+                </p>
+                <ul class="showcase-features">
+                    <li>✓ Points par achat</li>
+                    <li>✓ Récompenses personnalisées</li>
+                    <li>✓ Historique client</li>
+                    <li>✓ Notifications automatiques</li>
+                </ul>
+            </div>
+            <div class="showcase-image">
+                <img src="assets/images/loyalty-program.png" alt="Programme de Fidélité">
+            </div>
+        </div>
+    </section>
+
+    <!-- Offline Mode Feature -->
+    <section class="pos-showcase">
+        <div class="showcase-container">
+            <div class="showcase-content">
+                <span class="showcase-badge">🚀 Mode Hors Ligne</span>
+                <h2>Fonctionne sans internet</h2>
+                <p class="showcase-desc">
+                    Pas de connexion internet ? Aucun problème. Scalify POS fonctionne
+                    100% hors ligne avec synchronisation automatique dès que la connexion revient.
+                </p>
+                <ul class="showcase-features">
+                    <li>✓ 100% fonctionnel offline</li>
+                    <li>✓ Données stockées localement</li>
+                    <li>✓ Sync automatique</li>
+                    <li>✓ Sécurité maximale</li>
+                </ul>
+            </div>
+            <div class="showcase-image">
+                <img src="assets/images/offline-sync.png" alt="Mode Hors Ligne">
+            </div>
+        </div>
+    </section>
+
+    <!-- Retail Scene Section -->
+    <section class="pos-retail-scene">
+        <div class="retail-container">
+            <div class="retail-image">
+                <img src="assets/pos-screenshots/retail-scene.png" alt="Commerce utilisant Scalify POS">
+            </div>
+            <div class="retail-content">
+                <h2>Conçu pour les commerces algériens</h2>
+                <p>
+                    Scalify POS est développé spécialement pour les supérettes, épiceries et
+                    commerces en Algérie. Facturation conforme, interface en français et arabe,
+                    support local disponible 24/7.
+                </p>
+                <div class="retail-stats">
+                    <div class="retail-stat">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Commerces équipés</span>
+                    </div>
+                    <div class="retail-stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Support WhatsApp</span>
+                    </div>
+                    <div class="retail-stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Made in Algeria</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gestion des Dépenses Feature -->
+    <section class="pos-showcase reverse">
+        <div class="showcase-container">
+            <div class="showcase-content">
+                <span class="showcase-badge">💰 Gestion des Dépenses</span>
+                <h2>Maîtrisez vos coûts</h2>
+                <p class="showcase-desc">
+                    Enregistrez et catégorisez toutes vos dépenses. Suivez votre budget mensuel
+                    avec des barres de progression visuelles et des recommandations intelligentes.
+                </p>
+                <ul class="showcase-features">
+                    <li>✓ Budget mensuel avec alertes</li>
+                    <li>✓ Catégories personnalisables</li>
+                    <li>✓ Système de gamification XP</li>
+                    <li>✓ Graphiques comparatifs</li>
+                </ul>
+            </div>
+            <div class="showcase-image">
+                <img src="assets/pos-screenshots/expenses-mockup.png" alt="Gestion des Dépenses">
+            </div>
+        </div>
+    </section>
+
+    <!-- Facturation Feature -->
+    <section class="pos-showcase">
+        <div class="showcase-container">
+            <div class="showcase-content">
+                <span class="showcase-badge">🧾 Facturation Professionnelle</span>
+                <h2>Factures, devis et bons de livraison</h2>
+                <p class="showcase-desc">
+                    Créez des documents commerciaux professionnels en quelques clics.
+                    Factures A4 conformes, devis, avoirs et bons de commande disponibles.
+                </p>
+                <ul class="showcase-features">
+                    <li>✓ Factures A4 conformes</li>
+                    <li>✓ Devis et avoirs</li>
+                    <li>✓ Bons de livraison</li>
+                    <li>✓ Export PDF automatique</li>
+                </ul>
+            </div>
+            <div class="showcase-image">
+                <img src="assets/pos-screenshots/invoicing-mockup.png" alt="Facturation">
+            </div>
+        </div>
+    </section>
+
+    <!-- RH & Paie Feature -->
+    <section class="pos-showcase reverse">
+        <div class="showcase-container">
+            <div class="showcase-content">
+                <span class="showcase-badge">👥 RH & Paie</span>
+                <h2>Gérez vos employés facilement</h2>
+                <p class="showcase-desc">
+                    Module complet de gestion des ressources humaines. Fiches employés,
+                    pointage, avances sur salaire et génération automatique des fiches de paie.
+                </p>
+                <ul class="showcase-features">
+                    <li>✓ Fiches employés complètes</li>
+                    <li>✓ Système de pointage</li>
+                    <li>✓ Avances sur salaire</li>
+                    <li>✓ Fiches de paie automatiques</li>
+                </ul>
+            </div>
+            <div class="showcase-image">
+                <img src="assets/pos-screenshots/hr-mockup.png" alt="RH et Paie">
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="pos-why">
+        <div class="why-content">
+            <h2>Pourquoi choisir Scalify POS ?</h2>
+            <div class="why-list">
+                <div class="why-item">
+                    <span class="why-check">🇩🇿</span>
+                    <div>
+                        <h4>Développé en Algérie, pour l'Algérie</h4>
+                        <p>Conforme à la réglementation locale, interface en français et arabe.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <span class="why-check">🎧</span>
+                    <div>
+                        <h4>Support technique 24/7</h4>
+                        <p>Une équipe disponible par WhatsApp pour vous accompagner.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <span class="why-check">🔄</span>
+                    <div>
+                        <h4>Mises à jour gratuites</h4>
+                        <p>Nouvelles fonctionnalités et améliorations régulières incluses.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <span class="why-check">🎓</span>
+                    <div>
+                        <h4>Formation incluse</h4>
+                        <p>Configuration et formation initiale pour bien démarrer.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <span class="why-check">💎</span>
+                    <div>
+                        <h4>Haute Gamme & Haute Technologie</h4>
+                        <p>L'alliance parfaite entre un design premium et une ingénierie de pointe.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="cta-content">
+            <h2>Prêt à moderniser votre commerce ?</h2>
+            <p>Essayez Scalify POS gratuitement pendant 7 jours, sans engagement.</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/213562601518" class="btn btn-primary btn-large" target="_blank">
+                    Demander un essai gratuit
+                </a>
+                <a href="tel:+213562601518" class="btn btn-secondary btn-large">
+                    +213 5 62 60 15 18
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Notion Style) -->
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-brand">
+                    <img src="assets/logo-full.png" alt="Scalify" class="footer-logo-full">
+                </div>
+                <div class="footer-social">
+                    <a href="https://facebook.com/scalify" target="_blank" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/scalify" target="_blank" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/company/scalify" target="_blank" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="footer-lang">
+                    <button class="lang-selector" id="lang-selector">
+                        <svg class="lang-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <ellipse cx="12" cy="12" rx="4" ry="10"></ellipse>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                        </svg>
+                        <span class="lang-current" id="lang-current">Français (France)</span>
+                        <svg class="lang-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <!-- Language Dropdown - Notion Style -->
+                    <div class="lang-dropdown-menu" id="lang-dropdown">
+                        <button class="lang-option" data-lang="fr">
+                            <span class="lang-name-primary">Français</span>
+                            <span class="lang-name-secondary">FR</span>
+                        </button>
+                        <button class="lang-option" data-lang="en">
+                            <span class="lang-name-primary">English</span>
+                            <span class="lang-name-secondary">US</span>
+                        </button>
+                        <button class="lang-option" data-lang="ar">
+                            <span class="lang-name-primary">العربية</span>
+                            <span class="lang-name-secondary">DZ</span>
+                        </button>
+                    </div>
+                </div>
+                <a href="#" class="footer-link-small">Paramètres des cookies</a>
+            </div>
+
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4>Entreprise</h4>
+                    <ul>
+                        <li><a href="about.html">À propos</a></li>
+
+                        <li><a href="privacy.html">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Téléchargement</h4>
+                    <ul>
+                        <li><a href="download.html">Windows</a></li>
+                        <li><a href="download.html">Manuel d'utilisation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Ressources</h4>
+                    <ul>
+                        <li><a href="help.html">Centre d'aide</a></li>
+                        <li><a href="docs.html">Documentation</a></li>
+                        <li><a href="help.html">Support</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Scalify pour</h4>
+                    <ul>
+                        <li><a href="pos.html">Supérettes & Magasins</a></li>
+                        <li><a href="medical.html">Cabinets médicaux</a></li>
+                        <li><a href="enterprise.html">Entreprises</a></li>
+                        <li><a href="gym.html">Salles de Musculation</a></li>
+                        <li><a href="personnalisation.html">Personnalisation</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-animation-wrapper">
+            <canvas id="footer-particles" class="footer-particles"></canvas>
+            <div class="footer-brand-giant">
+                <span class="giant-text">Scalify</span>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-copyright">© 2026 Scalify.</p>
+            <p class="footer-founders">Mohamed AYATI | Tahar AYATI</p>
+        </div>
+    </footer>
+
+    <!-- Mini Floating Navbar -->
+    <nav class="mini-nav" id="mini-nav">
+        <a href="index.html" class="mini-nav-home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+        </a>
+        <div class="mini-nav-item" data-dropdown="solutions">
+            <button class="mini-nav-btn">
+                Solutions <span class="mini-nav-arrow">▾</span>
+            </button>
+            <div class="mini-nav-dropdown">
+                <a href="pos.html">Scalify POS</a>
+                <a href="medical.html">Scalify Medical</a>
+                <a href="enterprise.html">Scalify ERP</a>
+            </div>
+        </div>
+        <a href="help.html" class="mini-nav-link">
+            Contact <span class="mini-nav-external">↗</span>
+        </a>
+        <div class="mini-nav-item" data-dropdown="company">
+            <button class="mini-nav-btn">
+                Entreprise <span class="mini-nav-arrow">▾</span>
+            </button>
+            <div class="mini-nav-dropdown">
+                <a href="about.html">À propos</a>
+                <a href="privacy.html">Confidentialité</a>
+            </div>
+        </div>
+    </nav>
+
+    <script src="js/main.js"></script>
+
+    <!-- ElevenLabs AI Agent Widget -->
+    <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+    <elevenlabs-convai agent-id="agent_8401keqspz33e3wrma4hykcvmnnj"></elevenlabs-convai>
+</body>
+
+</html>

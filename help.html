@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centre d'aide - Scalify</title>
+    <meta name="description"
+        content="Centre d'aide Scalify. Trouvez des réponses à vos questions, accédez à la documentation et contactez notre équipe de support.">
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .help-hero {
+            padding: 140px 24px 80px;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+        }
+
+        .help-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .help-content h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: #1a1a2e;
+        }
+
+        .help-content p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .help-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-section {
+            max-width: 700px;
+            margin: -40px auto 60px;
+            padding: 0 24px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-box {
+            display: flex;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 20px 24px;
+            border: none;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-box button {
+            padding: 20px 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .search-box button:hover {
+            opacity: 0.9;
+        }
+
+        .help-cards-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        .help-cards-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #1a1a2e;
+        }
+
+        .help-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .help-card {
+            background: white;
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .help-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .help-card .icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .help-card .icon svg {
+            width: 36px;
+            height: 36px;
+            stroke: white;
+        }
+
+        .help-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1a1a2e;
+        }
+
+        .help-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 80px 24px;
+        }
+
+        .contact-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .contact-container h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-align: center;
+            color: #1a1a2e;
+        }
+
+        .contact-container>p {
+            text-align: center;
+            color: #666;
+            margin-bottom: 48px;
+            font-size: 18px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .contact-info-card {
+            background: white;
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-item .icon {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, #FF6B35 0%, #FF8F5E 100%);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .info-item .icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+        }
+
+        .info-item h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: #1a1a2e;
+        }
+
+        .info-item p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .info-item a {
+            color: #667eea;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .info-item a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a2e;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            flex-shrink: 0;
+            accent-color: #667eea;
+        }
+
+        .checkbox-group label {
+            margin-bottom: 0;
+            font-weight: 400;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .checkbox-group label a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .checkbox-group label a:hover {
+            text-decoration: underline;
+        }
+
+        .submit-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .submit-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .help-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .help-image {
+                order: -1;
+            }
+
+            .help-content h1 {
+                font-size: 36px;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .search-box button {
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <img src="assets/logo.png" alt="Scalify">
+            </a>
+            <ul class="navbar-menu" id="navbar-menu">
+                <li class="navbar-dropdown">
+                    <a href="javascript:void(0)" class="navbar-dropdown-trigger">Solutions
+                        <span class="dropdown-arrow">▾</span></a>
+                    <div class="navbar-dropdown-menu">
+                        <a href="pos.html">Supérettes & Magasins</a>
+                        <a href="medical.html">Cabinets médicaux</a>
+                        <a href="enterprise.html">Entreprises</a>
+                        <a href="gym.html">Salles de Sport</a>
+                        <a href="personnalisation.html">Personnalisation</a>
+                    </div>
+                </li>
+                <li><a href="support.html" class="active">Contact</a></li>
+            </ul>
+            <a href="help.html#contact-form" class="navbar-cta">Feedback</a>
+            <button class="navbar-toggle" id="navbar-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Help Hero -->
+    <section class="help-hero">
+        <div class="help-container">
+            <div class="help-content">
+                <h1>Centre d'aide</h1>
+                <p>
+                    Bienvenue dans notre centre d'aide. Trouvez rapidement des réponses à vos questions,
+                    explorez la documentation ou contactez notre équipe de support.
+                </p>
+            </div>
+            <div class="help-image">
+                <img src="assets/images/help-hero.png" alt="Centre d'aide Scalify">
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="search-box">
+            <input type="text" placeholder="Rechercher dans l'aide..." id="help-search">
+            <button type="button">Rechercher</button>
+        </div>
+    </section>
+
+    <!-- Help Cards -->
+    <section class="help-cards-section">
+        <h2>Comment pouvons-nous vous aider ?</h2>
+        <div class="help-cards">
+            <a href="docs.html" class="help-card">
+                <div class="icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                    </svg>
+                </div>
+                <h3>Documentation</h3>
+                <p>Guides complets et tutoriels pour maîtriser tous nos produits.</p>
+            </a>
+            <a href="faq.html" class="help-card">
+                <div class="icon" style="background: linear-gradient(135deg, #4CAF50 0%, #81C784 100%);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                </div>
+                <h3>FAQ</h3>
+                <p>Réponses aux questions les plus fréquemment posées.</p>
+            </a>
+            <a href="download.html" class="help-card">
+                <div class="icon" style="background: linear-gradient(135deg, #2196F3 0%, #64B5F6 100%);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                </div>
+                <h3>Téléchargements</h3>
+                <p>Téléchargez nos logiciels et manuels d'utilisation.</p>
+            </a>
+            <a href="support.html" class="help-card">
+                <div class="icon" style="background: linear-gradient(135deg, #FF6B35 0%, #FF8F5E 100%);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                        </path>
+                    </svg>
+                </div>
+                <h3>Nous contacter</h3>
+                <p>Besoin d'aide personnalisée ? Notre équipe est là pour vous.</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Form Section Removed -->
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-brand">
+                    <img src="assets/logo-full.png" alt="Scalify" class="footer-logo-full">
+                </div>
+                <div class="footer-social">
+                    <a href="https://facebook.com/scalify" target="_blank" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/scalify" target="_blank" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/company/scalify" target="_blank" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="footer-lang">
+                    <button class="lang-selector" id="lang-selector">
+                        <svg class="lang-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <ellipse cx="12" cy="12" rx="4" ry="10"></ellipse>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                        </svg>
+                        <span class="lang-current" id="lang-current">Français (France)</span>
+                        <svg class="lang-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <!-- Language Dropdown - Notion Style -->
+                    <div class="lang-dropdown-menu" id="lang-dropdown">
+                        <button class="lang-option" data-lang="fr">
+                            <span class="lang-name-primary">Français</span>
+                            <span class="lang-name-secondary">FR</span>
+                        </button>
+                        <button class="lang-option" data-lang="en">
+                            <span class="lang-name-primary">English</span>
+                            <span class="lang-name-secondary">US</span>
+                        </button>
+                        <button class="lang-option" data-lang="ar">
+                            <span class="lang-name-primary">العربية</span>
+                            <span class="lang-name-secondary">DZ</span>
+                        </button>
+                    </div>
+                </div>
+                <a href="#" class="footer-link-small">Paramètres des cookies</a>
+            </div>
+
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4>Entreprise</h4>
+                    <ul>
+                        <li><a href="about.html">À propos</a></li>
+
+                        <li><a href="privacy.html">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Téléchargement</h4>
+                    <ul>
+                        <li><a href="download.html">Windows</a></li>
+                        <li><a href="download.html">Manuel d'utilisation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Ressources</h4>
+                    <ul>
+                        <li><a href="help.html">Centre d'aide</a></li>
+                        <li><a href="docs.html">Documentation</a></li>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Scalify pour</h4>
+                    <ul>
+                        <li><a href="pos.html">Supérettes & Magasins</a></li>
+                        <li><a href="medical.html">Cabinets médicaux</a></li>
+                        <li><a href="enterprise.html">Entreprises</a></li>
+                        <li><a href="gym.html">Salles de Musculation</a></li>
+                        <li><a href="personnalisation.html">Personnalisation</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-animation-wrapper">
+            <canvas id="footer-particles" class="footer-particles"></canvas>
+            <div class="footer-brand-giant">
+                <span class="giant-text">Scalify</span>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-copyright">© 2026 Scalify.</p>
+            <p class="footer-founders">Mohamed AYATI | Tahar AYATI</p>
+        </div>
+    </footer>
+
+    <!-- Mini Floating Navbar (Jeton Style - Bottom) -->
+    <nav class="mini-navbar" id="mini-navbar">
+        <a href="index.html" class="mini-nav-home">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+        </a>
+        <div class="mini-nav-item" data-dropdown="solutions">
+            <button class="mini-nav-btn">
+                Solutions <span class="mini-nav-arrow">▾</span>
+            </button>
+            <div class="mini-nav-dropdown">
+                <a href="pos.html">Supérettes & Magasins</a>
+                <a href="medical.html">Cabinets médicaux</a>
+                <a href="enterprise.html">Entreprises</a>
+                <a href="gym.html">Salles de Sport</a>
+            </div>
+        </div>
+        <a href="support.html" class="mini-nav-link">
+            Contact <span class="mini-nav-external">↗</span>
+        </a>
+        <div class="mini-nav-item" data-dropdown="company">
+            <button class="mini-nav-btn">
+                À propos <span class="mini-nav-arrow">▾</span>
+            </button>
+            <div class="mini-nav-dropdown">
+                <a href="about.html">Notre histoire</a>
+                <a href="privacy.html">Confidentialité</a>
+            </div>
+        </div>
+    </nav>
+
+    <script src="js/main.js"></script>
+
+    <!-- ElevenLabs AI Agent Widget -->
+    <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+    <elevenlabs-convai agent-id="agent_8401keqspz33e3wrma4hykcvmnnj"></elevenlabs-convai>
+</body>
+
+</html>

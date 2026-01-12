@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scalify POS - Version Démo 1.0.0</title>
+    <link rel="icon" href="./icon.png">
+
+    <script src="./mockApi.js"></script>
+    <script defer="defer" src="./static/js/main.63224f75.js"></script>
+    <link href="./static/css/main.1de481a7.css" rel="stylesheet">
+
+    <style>
+        /* Demo Watermark Styles */
+        .demo-watermark {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .demo-watermark::before {
+            content: 'SCALIFY DEMO';
+            position: absolute;
+            font-size: 100px;
+            font-weight: 900;
+            font-family: 'Inter', sans-serif;
+            color: rgba(0, 0, 0, 0.04);
+            transform: rotate(-30deg);
+            white-space: nowrap;
+            letter-spacing: 15px;
+            user-select: none;
+        }
+
+        /* Demo Banner */
+        .demo-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #FF6B35, #F7931E);
+            color: white;
+            text-align: center;
+            padding: 8px 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            z-index: 100000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .demo-banner a {
+            color: white;
+            text-decoration: underline;
+            margin-left: 10px;
+        }
+
+        /* Adjust app to account for banner */
+        body {
+            padding-top: 36px !important;
+        }
+
+        /* Corner badge */
+        .demo-corner-badge {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 107, 53, 0.95);
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 100000;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+            pointer-events: auto;
+        }
+
+        .demo-corner-badge span {
+            display: block;
+            font-size: 10px;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-top: 3px;
+        }
+
+        /* Login hint box */
+        .demo-login-hint {
+            position: fixed;
+            top: 50px;
+            right: 20px;
+            background: rgba(26, 26, 46, 0.95);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            z-index: 100000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .demo-login-hint strong {
+            color: #F7931E;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Demo Banner -->
+    <div class="demo-banner">
+        🎮 VERSION DÉMO - Connectez-vous avec admin / admin
+        <a href="../download.html">Télécharger la version complète</a>
+    </div>
+
+    <!-- Watermark -->
+    <div class="demo-watermark"></div>
+
+    <!-- Login Hint -->
+    <div class="demo-login-hint" id="loginHint">
+        👤 Identifiants: <strong>admin</strong> / <strong>admin</strong>
+    </div>
+
+    <!-- Corner Badge -->
+    <div class="demo-corner-badge">
+        ✨ Scalify Demo v1.0.0
+        <span>Refresh = Données perdues</span>
+    </div>
+
+    <!-- React App Root -->
+    <div id="root"></div>
+
+    <script>
+        // Hide login hint after 10 seconds
+        setTimeout(function () {
+            const hint = document.getElementById('loginHint');
+            if (hint) hint.style.display = 'none';
+        }, 10000);
+    </script>
+</body>
+
+</html>

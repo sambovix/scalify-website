@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sync Licences - Scalify</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f7f7f5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            color: #37352f;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+
+        p {
+            color: #6b6b6b;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: #37352f;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d3d3d0;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 12px;
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #E9A23B;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: #E9A23B;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #d4922f;
+        }
+
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #37352f;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .success {
+            background: #e6f4f1;
+            color: #0f7b6c;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-top: 16px;
+            display: none;
+        }
+
+        .license-list {
+            margin-top: 24px;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 16px;
+        }
+
+        .license-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px;
+            background: #f8f8f8;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+
+        .license-item strong {
+            color: #37352f;
+        }
+
+        .license-item .key {
+            font-family: monospace;
+            font-size: 11px;
+            color: #6b6b6b;
+        }
+
+        .badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+        }
+
+        .badge-trial {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .badge-annual {
+            background: #cce5ff;
+            color: #004085;
+        }
+
+        .badge-lifetime {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .empty {
+            color: #999;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>ðŸ”„ Synchronisation des Licences</h1>
+        <p>Collez ici le contenu JSON des licences pour les rendre accessibles au navigateur.</p>
+
+        <div class="form-group">
+            <label>DonnÃ©es JSON des licences</label>
+            <textarea id="licenseData" placeholder='{"licenses": [...]}'></textarea>
+        </div>
+
+        <div class="actions">
+            <button class="btn btn-primary" onclick="syncLicenses()">ðŸ“¥ Synchroniser</button>
+            <button class="btn btn-secondary" onclick="clearLicenses()">ðŸ—‘ï¸ Effacer tout</button>
+            <button class="btn btn-secondary" onclick="loadFromFile()">ðŸ“‚ Charger fichier</button>
+        </div>
+
+        <div class="success" id="successMsg">âœ… Licences synchronisÃ©es avec succÃ¨s !</div>
+
+        <div class="license-list">
+            <h3>Licences en mÃ©moire</h3>
+            <div id="licensesList"></div>
+        </div>
+    </div>
+
+    <input type="file" id="fileInput" accept=".json" style="display:none" onchange="handleFile(event)">
+
+    <script>
+        function getLicenses() {
+            try {
+                const stored = localStorage.getItem('scalify_shared_licenses');
+                return stored ? JSON.parse(stored) : [];
+            } catch { return []; }
+        }
+
+        function renderLicenses() {
+            const licenses = getLicenses();
+            const container = document.getElementById('licensesList');
+
+            if (licenses.length === 0) {
+                container.innerHTML = '<div class="empty">Aucune licence en mÃ©moire</div>';
+                return;
+            }
+
+            container.innerHTML = licenses.map(l => `
+                <div class="license-item">
+                    <div>
+                        <strong>${l.clientName}</strong>
+                        <div class="key">${l.key}</div>
+                    </div>
+                    <span class="badge badge-${l.licenseType}">${l.licenseType}</span>
+                </div>
+            `).join('');
+        }
+
+        function syncLicenses() {
+            try {
+                const data = document.getElementById('licenseData').value;
+                const parsed = JSON.parse(data);
+                const licenses = parsed.licenses || parsed;
+
+                localStorage.setItem('scalify_shared_licenses', JSON.stringify(licenses));
+
+                document.getElementById('successMsg').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('successMsg').style.display = 'none';
+                }, 3000);
+
+                renderLicenses();
+                document.getElementById('licenseData').value = '';
+            } catch (e) {
+                alert('Erreur: Format JSON invalide. ' + e.message);
+            }
+        }
+
+        function clearLicenses() {
+            if (confirm('Effacer toutes les licences en mÃ©moire ?')) {
+                localStorage.removeItem('scalify_shared_licenses');
+                renderLicenses();
+            }
+        }
+
+        function loadFromFile() {
+            document.getElementById('fileInput').click();
+        }
+
+        function handleFile(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                document.getElementById('licenseData').value = e.target.result;
+            };
+            reader.readAsText(file);
+        }
+
+        // Load on start
+        renderLicenses();
+    </script>
+</body>
+
+</html>
