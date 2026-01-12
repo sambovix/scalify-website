@@ -9,6 +9,15 @@
     <link rel="icon" href="assets/logo.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init('wXU8hBJvN-Obdw2_N');
+        })();
+    </script>
+
     <style>
         :root {
             --primary-color: #4F46E5;
@@ -581,6 +590,67 @@
     </nav>
 
     <script src="js/main.js"></script>
+
+    <!-- EmailJS Form Handler -->
+    <script>
+        document.getElementById('support-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span>Envoi en cours...</span>';
+            btn.disabled = true;
+
+            // Get form data
+            const formData = {
+                first_name: document.getElementById('prenom').value,
+                last_name: document.getElementById('nom').value,
+                from_name: document.getElementById('prenom').value + ' ' + document.getElementById('nom').value,
+                from_email: document.getElementById('email').value,
+                phone: document.getElementById('telephone').value || 'Non fourni',
+                subject: document.getElementById('sujet').options[document.getElementById('sujet').selectedIndex].text,
+                message: document.getElementById('message').value,
+                date: new Date().toLocaleDateString('fr-FR', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                })
+            };
+
+            // Send notification to Scalify
+            emailjs.send('service_jn3fzt9', 'template_8licoz8', formData)
+                .then(function () {
+                    // Send auto-reply to customer
+                    return emailjs.send('service_jn3fzt9', 'template_ia25dud', formData);
+                })
+                .then(function () {
+                    // Success
+                    btn.innerHTML = '<span>✓ Message envoyé !</span>';
+                    btn.style.background = '#22c55e';
+
+                    // Reset form after delay
+                    setTimeout(function () {
+                        document.getElementById('support-form').reset();
+                        btn.innerHTML = originalText;
+                        btn.style.background = '';
+                        btn.disabled = false;
+                    }, 3000);
+                })
+                .catch(function (error) {
+                    console.error('EmailJS Error:', error);
+                    btn.innerHTML = '<span>Erreur - Réessayez</span>';
+                    btn.style.background = '#ef4444';
+                    btn.disabled = false;
+
+                    setTimeout(function () {
+                        btn.innerHTML = originalText;
+                        btn.style.background = '';
+                    }, 3000);
+                });
+        });
+    </script>
 
     <!--Start of Chatbase Script-->
     <script>
